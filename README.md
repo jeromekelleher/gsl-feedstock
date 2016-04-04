@@ -73,6 +73,11 @@ Linux: [![Circle CI](https://circleci.com/gh/conda-forge/gsl-feedstock.svg?style
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/gsl-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/gsl-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/gsl-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/gsl-feedstock/branch/master)
 
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/gsl/badges/version.svg)](https://anaconda.org/conda-forge/gsl)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/gsl/badges/downloads.svg)](https://anaconda.org/conda-forge/gsl)
+
 
 Updating gsl-feedstock
 ======================
