@@ -8,12 +8,8 @@ source:
     md5: d8f70abafd3e9f0bae03c52d1f4e8de5
 
 build:
-    number: 1
+    number: 2
     skip: True  # [win]
-
-requirements:
-    run:
-        - libgcc
 
 test:
     commands:
