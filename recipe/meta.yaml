@@ -5,11 +5,9 @@ package:
   version: {{ version }}
 
 source:
-  fn: gsl-{{ version }}.tar.gz                                              # [not win]
-  url: http://ftpmirror.gnu.org/gsl/gsl-{{ version }}.tar.gz                # [not win]
-  sha256: 13d23dc7b0824e1405f3f7e7d0776deee9b8f62c62860bf66e7852d402b8b024  # [not win]
-  git_url: https://github.com/shadowwalkersb/gsl.git  # [win]
-  git_tag: master                                     # [win]
+  fn: gsl-{{ version }}.tar.gz
+  url: http://ftpmirror.gnu.org/gsl/gsl-{{ version }}.tar.gz
+  sha256: 13d23dc7b0824e1405f3f7e7d0776deee9b8f62c62860bf66e7852d402b8b024
 
 build:
   number: 0
