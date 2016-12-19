@@ -18,7 +18,7 @@ build:
 
 test:
   commands:
-    - gsl-config --prefix
+    - gsl-config --prefix  # [not win]
     #- conda inspect linkages -p $PREFIX gsl  # [not win]
     #- conda inspect objects -p $PREFIX gsl  # [osx]
 
