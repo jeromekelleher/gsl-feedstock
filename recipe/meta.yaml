@@ -8,6 +8,10 @@ source:
   fn: gsl-{{ version }}.tar.gz
   url: http://ftpmirror.gnu.org/gsl/gsl-{{ version }}.tar.gz
   sha256: 13d23dc7b0824e1405f3f7e7d0776deee9b8f62c62860bf66e7852d402b8b024
+  
+  patches:                         # [win]
+  # https://github.com/ampl/gsl/  
+    - patch.diff                   # [win]
 
 build:
   number: 0
