@@ -7,7 +7,7 @@ if errorlevel 1 exit 1
 cd %builddir%
 if errorlevel 1 exit 1
 
-copy %RECIPE_DIR%\\CMakeLists.txt %SRC_DIR%\\CMakeLists.txt
+copy %SRC_DIR%\\contrib\\CMakeLists.txt %SRC_DIR%\\CMakeLists.txt
 
 cmake %SRC_DIR% -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX%
 if errorlevel 1 exit 1
