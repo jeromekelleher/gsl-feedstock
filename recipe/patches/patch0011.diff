@@ -1,0 +1,65 @@
+From 136269092823c93bc30a82fa32b518a71c728c4e Mon Sep 17 00:00:00 2001
+From: mancoast <RobertPancoast77@gmail.com>
+Date: Sat, 17 Dec 2016 12:10:23 -0500
+Subject: [PATCH] Comment Dead Code to Enable MSVC14 shared build
+
+---
+ multilarge_nlinear/fdf.c                    | 4 ++++
+ multilarge_nlinear/gsl_multilarge_nlinear.h | 4 ++++
+ 2 files changed, 8 insertions(+)
+
+diff --git a/multilarge_nlinear/fdf.c b/multilarge_nlinear/fdf.c
+index f35a7c3..c90eb67 100644
+--- a/multilarge_nlinear/fdf.c
++++ b/multilarge_nlinear/fdf.c
+@@ -502,7 +502,9 @@ gsl_multilarge_nlinear_eval_df(const CBLAS_TRANSPOSE_t TransJ,
+         {
+ #if 0
+           /* use finite difference Jacobian approximation */
++          /*
+           status = gsl_multilarge_nlinear_df(h, fdtype, x, swts, fdf, f, df, work);
++          */
+ #endif
+         }
+ 
+@@ -551,8 +553,10 @@ gsl_multilarge_nlinear_eval_fvv(const double h,
+     {
+ #if 0
+       /* use finite difference approximation */
++      /*
+       status = gsl_multilarge_nlinear_fdfvv(h, x, v, f, J,
+                                           swts, fdf, yvv, work);
++                                          */
+ #endif
+     }
+ 
+diff --git a/multilarge_nlinear/gsl_multilarge_nlinear.h b/multilarge_nlinear/gsl_multilarge_nlinear.h
+index 51e131b..a243f19 100644
+--- a/multilarge_nlinear/gsl_multilarge_nlinear.h
++++ b/multilarge_nlinear/gsl_multilarge_nlinear.h
+@@ -275,18 +275,22 @@ gsl_multilarge_nlinear_test (const double xtol, const double gtol,
+                              const gsl_multilarge_nlinear_workspace * w);
+ 
+ /* fdjac.c */
++/*
+ int
+ gsl_multilarge_nlinear_df(const double h, const gsl_multilarge_nlinear_fdtype fdtype,
+                           const gsl_vector *x, const gsl_vector *wts,
+                           gsl_multilarge_nlinear_fdf *fdf,
+                           const gsl_vector *f, gsl_matrix *J, gsl_vector *work);
++						  */
+ 
+ /* fdfvv.c */
++/*
+ int
+ gsl_multilarge_nlinear_fdfvv(const double h, const gsl_vector *x, const gsl_vector *v,
+                              const gsl_vector *f, const gsl_matrix *J,
+                              const gsl_vector *swts, gsl_multilarge_nlinear_fdf *fdf,
+                              gsl_vector *fvv, gsl_vector *work);
++							 */
+ 
+ /* top-level algorithms */
+ GSL_VAR const gsl_multilarge_nlinear_type * gsl_multilarge_nlinear_trust;
+-- 
+2.10.0
+

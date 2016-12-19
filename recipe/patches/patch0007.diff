@@ -1,0 +1,26 @@
+From d389f003a27b9d2f9ff3005e6afbb8ef9f48b736 Mon Sep 17 00:00:00 2001
+From: Filipe Brandao <fdabrandao@gmail.com>
+Date: Sat, 17 Sep 2016 19:44:54 -0400
+Subject: [PATCH] Replace log2(x) by log(x)/log(2)
+
+since MSVC does not provide log2
+---
+ linalg/qrpt.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/linalg/qrpt.c b/linalg/qrpt.c
+index 944f6e9..d75a671 100644
+--- a/linalg/qrpt.c
++++ b/linalg/qrpt.c
+@@ -599,7 +599,7 @@ gsl_linalg_QRPT_rank (const gsl_matrix * QR, const double tol)
+ 
+       gsl_vector_minmax(&diag.vector, &min, &max);
+       absmax = GSL_MAX(fabs(min), fabs(max));
+-      ee = (int) log2(absmax);
++      ee = (int) (log(absmax) / log(2.0));
+ 
+       eps = 20.0 * (M + N) * pow(2.0, (double) ee) * GSL_DBL_EPSILON;
+     }
+-- 
+2.10.0
+

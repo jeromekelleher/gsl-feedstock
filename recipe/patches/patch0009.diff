@@ -1,0 +1,32 @@
+From cd8bc800c2c0e8f7875649db073e600b5c1071a9 Mon Sep 17 00:00:00 2001
+From: Filipe Brandao <fdabrandao@gmail.com>
+Date: Thu, 22 Sep 2016 09:39:41 -0400
+Subject: [PATCH] Add cross-platform format macro F_ZU for size_t (#9)
+
+---
+ configure.ac | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/configure.ac b/configure.ac
+index b962d6d..8fe7287 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -575,6 +575,15 @@ AH_BOTTOM([#if defined(GSL_RANGE_CHECK_OFF) || !defined(GSL_RANGE_CHECK)
+ AH_BOTTOM([#define RETURN_IF_NULL(x) if (!x) { return ; }
+ ])
+ 
++AH_BOTTOM([/* Microsoft Visual C does not support "%zu" */
++#ifdef _WIN64
++#define F_ZU "%llu"
++#elif _WIN32
++#define F_ZU "%lu"
++#else
++#define F_ZU "%zu"
++#endif])
++
+ AH_VERBATIM([GSL_DISABLE_DEPRECATED],
+ [/* Disable deprecated functions and enums while building */
+ #define GSL_DISABLE_DEPRECATED 1])
+-- 
+2.10.0
+
