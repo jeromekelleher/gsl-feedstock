@@ -11,7 +11,7 @@ source:
   
   patches:                         # [win]
   # https://github.com/ampl/gsl/  
-    - patch.diff                   # [win]
+    - patch_cmake_for_windows.diff                   # [win]
 
 build:
   number: 0
