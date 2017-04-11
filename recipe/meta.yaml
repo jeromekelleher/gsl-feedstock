@@ -19,7 +19,7 @@ build:
   features:
     - vc9    # [win and py27]
     - vc10   # [win and py34]
-    - vc14   # [win and py35]
+    - vc14   # [win and py>=35]
     - blas_{{ variant }}  # [not win]
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
     - python  # [win]
     - vc 9    # [win and py27]
     - vc 10   # [win and py34]
-    - vc 14   # [win and py35]
+    - vc 14   # [win and py>=35]
     - blas 1.1 {{ variant }}    # [not win]
     - openblas 0.2.19|0.2.19.*  # [not win]
   run:
