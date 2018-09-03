@@ -12,7 +12,7 @@ ln -s "$PREFIX/lib/libopenblas${SHLIB_EXT}" "$PREFIX/lib/libgslcblas${SHLIB_EXT}
 
 if [ "$(uname)" == "Darwin" ]; then
     ln -s "$PREFIX/lib/libopenblas${SHLIB_EXT}" "$PREFIX/lib/libgslcblas.0${SHLIB_EXT}"
-elif [ "$(uname)" == "Linux" ]
+elif [ "$(uname)" == "Linux" ]; then
     ln -s "$PREFIX/lib/libopenblas${SHLIB_EXT}" "$PREFIX/lib/libgslcblas${SHLIB_EXT}.0"
 fi
 
