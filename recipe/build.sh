@@ -1,6 +1,6 @@
 #!/bin/bash
 
- export LIBS="-lm -lcblas -lopenblas"
+export LIBS="-lm -lcblas -lopenblas"
 ./configure --prefix=${PREFIX}  \
             --host=${HOST}
 
